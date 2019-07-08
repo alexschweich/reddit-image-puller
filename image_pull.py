@@ -6,7 +6,7 @@ from urllib.request import urlretrieve
 
 
 def create_reddit_instance():
-    reddit = praw.Reddit('bot1', user_agent='ubuntu:subreddit_pull bot1')
+    reddit = praw.Reddit('image_pull', user_agent='ubuntu:subreddit_pull bot1')
     return reddit
 
 
