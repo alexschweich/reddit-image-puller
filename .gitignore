@@ -1,0 +1,8 @@
+#Ignore .ini and images
+*.ini
+*.jpg
+*.png
+
+#Ignore pycache
+__pycache__/
+.idea/
