@@ -6,7 +6,6 @@ import random
 
 def main():
     filepath = os.getcwd() + '/images/' + random.choice(os.listdir('images'))
-    print(filepath)
     if os.name == 'nt':  # Windows
         SPI_SETDESKWALLPAPER = 20
         ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, filepath, 0)
