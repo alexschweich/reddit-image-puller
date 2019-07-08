@@ -15,8 +15,6 @@ Setting a CRON/Windows scheduler will do the following for each file:
 
 By default the program deletes existing images and downloads new ones when image_pull.py is run. To disable this, comment/delete the rmtree and mkdir lines in the main method.
 
-Change the filepath in change_background.py to match where the /images directory is
-
 Ensure to configure a praw.ini file and put it in the directory before running the script, instructions here:
 https://praw.readthedocs.io/en/latest/getting_started/configuration/prawini.html#praw-ini
 
