@@ -1,6 +1,6 @@
 # `Reddit Image Puller`
 
-#### Reddit image puller is a small script to pull a set of images from a selected subreddit, and change your desktop background to randomly select one of those images.
+#### Reddit Image Puller is a small script to pull a set of images from a selected subreddit, and change your desktop background to randomly select one of those images.
 
 The subreddit, number of results, and sorting method can be changed easily
 
