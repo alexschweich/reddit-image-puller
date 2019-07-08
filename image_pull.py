@@ -19,7 +19,7 @@ def pull_from_subreddit(reddit, subreddit, num_of_posts):
             elif submission.url.endswith('png'):
                 urlretrieve(submission.url, 'images/'+submission.title+'.png')
             else:
-                pass
+                continue
     except Exception as e:
         print("Not able to obtain posts")
         print(e)
