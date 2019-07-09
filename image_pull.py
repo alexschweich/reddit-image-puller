@@ -1,6 +1,7 @@
 import praw
 import shutil
 import os
+import logging
 import change_background
 from urllib.request import urlretrieve
 
@@ -20,16 +21,21 @@ def pull_from_subreddit(reddit, subreddit, num_of_posts):
                 urlretrieve(submission.url, 'images/'+submission.title+'.png')
             else:
                 continue
-    except Exception as e:
-        print("Not able to obtain posts")
-        print(e)
+        logging.info('Downloaded ' + str(num_of_posts) + ' images from ' + subreddit + 'into /images')
+    except:
+        logging.critical('Not able to obtain posts')
 
 
 def main():
+    logging.basicConfig(filename='image_puller.log',
+                        level=logging.INFO,
+                        format='%(asctime)s - %(levelname)s - %(message)s',
+                        datefmt='%m/%d/%Y %I:%M:%S %p')
     # Remove all old images and recreate the folder for new ones
     if os.path.isdir('images'):
         shutil.rmtree('images')
     os.mkdir('images')
+    logging.info('Created images directory')
 
     reddit = create_reddit_instance()
     subreddit = 'earthporn'

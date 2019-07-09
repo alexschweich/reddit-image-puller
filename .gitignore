@@ -1,7 +1,8 @@
-#Ignore .ini and images
+#Ignore .ini, logs and images
 *.ini
 *.jpg
 *.png
+*.log
 
 #Ignore pycache
 __pycache__/
