@@ -11,7 +11,7 @@ def main():
                         format='%(asctime)s - %(levelname)s - %(message)s',
                         datefmt='%m/%d/%Y %I:%M:%S %p')
     filepath = os.getcwd() + '/images/' + random.choice(os.listdir('images'))
-    print(filepath)
+    logging.info(filepath)
     if os.name == 'nt':  # Windows
         SPI_SETDESKWALLPAPER = 20
         ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, filepath, 0)
