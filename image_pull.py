@@ -12,18 +12,19 @@ def create_reddit_instance():
 
 
 def pull_from_subreddit(reddit, subreddit, num_of_posts):
-    try:
         for submission in reddit.subreddit(subreddit).hot(limit=num_of_posts):
             # Checks for valid image file type
-            if submission.url.endswith('jpg'):
-                urlretrieve(submission.url, 'images/'+submission.title+'.jpg')
-            elif submission.url.endswith('png'):
-                urlretrieve(submission.url, 'images/'+submission.title+'.png')
-            else:
+            try:
+                if submission.url.endswith('jpg'):
+                    urlretrieve(submission.url, 'images/'+submission.title+'.jpg')
+                elif submission.url.endswith('png'):
+                    urlretrieve(submission.url, 'images/'+submission.title+'.png')
+                else:
+                    continue
+            except:
+                logging.critical('Not able to obtain posts')
                 continue
         logging.info('Downloaded ' + str(num_of_posts) + ' images from ' + subreddit + 'into /images')
-    except:
-        logging.critical('Not able to obtain posts')
 
 
 def main():
